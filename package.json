@@ -28,6 +28,7 @@
   },
   "dependencies": {
     "fs-extra": "^0.26.3",
+    "lodash": "^3.10.1",
     "parse-less-import": "0.0.1",
     "treeify": "^1.0.1",
     "vinyl": "^1.1.0"
