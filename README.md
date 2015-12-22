@@ -9,7 +9,7 @@
 [![License](http://img.shields.io/npm/l/less-tree.svg?style=flat-square)](LICENSE)
 [![npm download](https://img.shields.io/npm/dm/less-tree.svg?style=flat-square)](https://npmjs.org/package/less-tree)
 
-Get less import file tree
+Get less import vinyl file tree
 
 ## Installation
 
@@ -18,6 +18,56 @@ $ npm install --save less-tree
 ```
 
 ## Usage
+
+### Create Tree
+
+```javascript
+const lessTree = require('less-tree');
+
+// create less vinyl file tree
+let tree = lessTree('a.less');
+
+tree.children // => get tree children vinyl file object
+```
+
+### toTreeObject
+
+```javascript
+// get tree object
+tree.toTreeObject();
+/*
+{
+  'b.less': {
+    'd.less': {
+      'sub/f.less': {}
+    }
+  },
+  'c.less': {
+    'd.less': {
+      'sub/f.less': {}
+    }
+  },
+  'sub/e.less': {}
+}
+*/
+```
+
+### toTreeString
+
+
+```javascript
+// get tree string
+tree.toTreeString();
+/*
+├─ b.less
+│  └─ d.less
+│     └─ sub/f.less
+├─ c.less
+│  └─ d.less
+│     └─ sub/f.less
+└─ sub/e.less
+*/
+```
 
 ## Test
 

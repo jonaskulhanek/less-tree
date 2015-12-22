@@ -9,7 +9,7 @@ describe('less-tree', () => {
   before(() => process.chdir(path.join(__dirname, 'source')));
   after(() => process.chdir(CWD));
   it('should to tree object', () => {
-    tree(path.join(process.cwd(), 'a.less')).toTreeObject().should.be.eql({
+    tree('a.less').toTreeObject().should.be.eql({
       'b.less': {
         'd.less': {
           'sub/f.less': {}
@@ -24,7 +24,7 @@ describe('less-tree', () => {
     });
   });
   it('should to tree string', () => {
-    tree(path.join(process.cwd(), 'a.less')).toTreeString().trim().should.be.eql(`
+    tree('a.less').toTreeString().trim().should.be.eql(`
 ├─ b.less
 │  └─ d.less
 │     └─ sub/f.less
