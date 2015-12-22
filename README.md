@@ -25,16 +25,16 @@ $ npm install --save less-tree
 const lessTree = require('less-tree');
 
 // create less vinyl file tree
-let tree = lessTree('a.less');
+let root = lessTree('a.less');
 
-tree.children // => get tree children vinyl file object
+root.children // => get tree children vinyl file object
 ```
 
 ### toTreeObject
 
 ```javascript
 // get tree object
-tree.toTreeObject();
+root.toTreeObject();
 /*
 {
   'b.less': {
@@ -57,7 +57,7 @@ tree.toTreeObject();
 
 ```javascript
 // get tree string
-tree.toTreeString();
+root.toTreeString();
 /*
 ├─ b.less
 │  └─ d.less
